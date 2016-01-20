@@ -16,6 +16,7 @@ set laststatus=2
 set list
 set listchars=tab:▸\ ,eol:¬,nbsp:æ
 set mouse=a
+set nrformats=hex
 " tab behavior
 set tabstop=4
 set shiftwidth=4
