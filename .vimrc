@@ -2,13 +2,26 @@
 set nocompatible
 filetype off
 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-execute pathogen#infect()
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+" Plugins {{{2
+Plugin 'mileszs/ack.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-airline/vim-airline'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'vim-scripts/snipMate'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 autocmd vimenter * NERDTree
 
-" Settings {{{1
+" Options {{{1
 set foldmethod=marker
 set ignorecase
 set incsearch
