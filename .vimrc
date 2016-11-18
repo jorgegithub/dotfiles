@@ -13,6 +13,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-airline/vim-airline'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'vim-scripts/snipMate'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
