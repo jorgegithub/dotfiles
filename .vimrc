@@ -16,12 +16,22 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/snipMate'
 "Plugin 'SirVer/ultisnips'
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 autocmd vimenter * NERDTree
+
+" 20170227
+"if has('gui_running')
+    set background=dark
+    colorscheme solarized
+"else
+"    colorscheme zenburn
+"endif
 
 " Options {{{1
 set foldmethod=marker
@@ -30,7 +40,7 @@ set incsearch
 set laststatus=2
 set list
 set listchars=tab:▸\ ,eol:¬,nbsp:æ
-set mouse=a
+set mouse=n
 set nrformats=hex
 " tab behavior
 set tabstop=4
