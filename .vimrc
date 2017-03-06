@@ -60,9 +60,26 @@ set wildignore+=*.pdf
 let mapleader=","
 " .vimrc {{{2
 " Open .vimrc
-nnoremap <leader>v :e ~/.vimrc<CR>
-nnoremap <leader>V :tabnew ~/.vimrc<CR>
-nnoremap <leader>s :source ~/.vimrc<CR>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>eV :tabnew $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>
+nnoremap <leader>' viw<esc>a"<esc>bi'<esc>
+nnoremap <leader>{ viw<esc>a}<esc>bi{<esc>
+nnoremap <leader>[ viw<esc>a]<esc>bi[<esc>
+nnoremap <leader>( viw<esc>a)<esc>bi(<esc>
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
+
+inoremap <c-u> viwUea
+
+iabbrev ññ -- <cr>Jorge del Arco<cr>jdelarco@gmail.com
 "
 "YCM TAB to Enter because of snippets plugins incompatibility
 let g:ycm_key_list_select_completion = ['<Enter>', '<Down>']
