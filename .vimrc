@@ -64,6 +64,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>eV :tabnew $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
+nnoremap <leader>* viw<esc>a*<esc>bi*<esc>
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>
 nnoremap <leader>' viw<esc>a"<esc>bi'<esc>
 nnoremap <leader>{ viw<esc>a}<esc>bi{<esc>
