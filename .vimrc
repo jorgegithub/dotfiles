@@ -39,6 +39,7 @@ autocmd vimenter * NERDTree
 "endif
 
 " Options {{{1
+set pastetoggle=<F3>
 set foldmethod=marker
 set ignorecase
 set incsearch
