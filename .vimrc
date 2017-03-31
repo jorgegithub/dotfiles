@@ -24,6 +24,7 @@ Plugin 'honza/vim-snippets'
 " Colorschemes
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
+"Plugin 'avakhov/vim-yaml'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -33,7 +34,8 @@ autocmd vimenter * NERDTree
 
 "if has('gui_running')
     set background=dark
-    colorscheme solarized
+    colorscheme hipster
+    "colorscheme solarized
 "else
 "    colorscheme zenburn
 "endif
