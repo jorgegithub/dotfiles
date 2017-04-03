@@ -31,6 +31,11 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 "
 autocmd vimenter * NERDTree
+augroup testgroup
+    autocmd!
+    autocmd Filetype python set background=dark
+    autocmd Filetype python colorscheme zenburn
+augroup END
 
 "if has('gui_running')
     set background=dark
