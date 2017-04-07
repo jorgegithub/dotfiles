@@ -34,7 +34,7 @@ autocmd vimenter * NERDTree
 augroup testgroup
     autocmd!
     autocmd Filetype python set background=dark
-    autocmd Filetype python colorscheme zenburn
+    autocmd Filetype python colorscheme pychimp
 augroup END
 
 "if has('gui_running')
@@ -62,7 +62,7 @@ set softtabstop=4
 set expandtab
 "
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
-set wildignore+=*.pdf
+set wildignore+=*.pdf,*.tgz,*.exe
 "
 " Mappings {{{1
 let mapleader=","
