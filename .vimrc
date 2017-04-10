@@ -62,7 +62,7 @@ set softtabstop=4
 set expandtab
 "
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
-set wildignore+=*.pdf,*.tgz,*.exe,*.xls,*.xlsx
+set wildignore+=*.pdf,*.tgz,*.exe,*.xls,*.xlsx,*.doc,*.docx
 "
 " Mappings {{{1
 let mapleader=","
