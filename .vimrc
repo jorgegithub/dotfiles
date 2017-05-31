@@ -52,7 +52,8 @@ set ignorecase
 set incsearch
 set laststatus=2
 set list
-set listchars=tab:▸\ ,eol:¬,nbsp:æ
+set listchars=tab:▸\ ,nbsp:æ
+"set listchars=tab:▸\ ,eol:¬,nbsp:æ
 set mouse=n
 set nrformats=hex
 " tab behavior
@@ -63,6 +64,10 @@ set expandtab
 "
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
 set wildignore+=*.pdf,*.tgz,*.exe,*.xls,*.xlsx,*.doc,*.docx
+
+" Highlight
+highlight TrailingSpaces ctermbg=red guibg=red
+match TrailingSpaces /[ \t]\+$/
 "
 " Mappings {{{1
 let mapleader=","
