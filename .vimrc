@@ -45,6 +45,16 @@ augroup END
 "    colorscheme zenburn
 "endif
 
+" Personal options {{{1
+let g:maquina = system('hostname')
+if g:maquina =~ "mahi-mahi"
+    let g:rutaBusqueda = "/home/jorge/documents/prb_es/g_conf/notas_reuniones"
+elseif g:maquina =~ "J's"
+    let g:rutaBusqueda = "/Users/jorge/Documents"
+else
+    let g:rutaBusqueda = "/home/jorge"
+endif
+
 " Options {{{1
 set pastetoggle=<F3>
 set foldmethod=marker
