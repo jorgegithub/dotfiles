@@ -24,19 +24,36 @@ Plugin 'honza/vim-snippets'
 " Colorschemes
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
+"Plugin 'avakhov/vim-yaml'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 "
 autocmd vimenter * NERDTree
+augroup testgroup
+    autocmd!
+    autocmd Filetype python set background=dark
+    autocmd Filetype python colorscheme pychimp
+augroup END
 
 "if has('gui_running')
     set background=dark
-    colorscheme solarized
+    colorscheme hipster
+    "colorscheme solarized
 "else
 "    colorscheme zenburn
 "endif
+
+" Personal options {{{1
+let g:maquina = system('hostname')
+if g:maquina =~ "mahi-mahi"
+    let g:rutaBusqueda = "/home/jorge/documents/prb_es/g_conf/notas_reuniones"
+elseif g:maquina =~ "J's"
+    let g:rutaBusqueda = "/Users/jorge/Documents"
+else
+    let g:rutaBusqueda = "/home/jorge"
+endif
 
 " Options {{{1
 set pastetoggle=<F3>
@@ -45,7 +62,8 @@ set ignorecase
 set incsearch
 set laststatus=2
 set list
-set listchars=tab:▸\ ,eol:¬,nbsp:æ
+set listchars=tab:▸\ ,nbsp:æ
+"set listchars=tab:▸\ ,eol:¬,nbsp:æ
 set mouse=n
 set nrformats=hex
 " tab behavior
@@ -55,7 +73,11 @@ set softtabstop=4
 set expandtab
 "
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
-set wildignore+=*.pdf
+set wildignore+=*.pdf,*.tgz,*.exe,*.xls,*.xlsx,*.doc,*.docx
+
+" Highlight
+highlight TrailingSpaces ctermbg=red guibg=red
+match TrailingSpaces /[ \t]\+$/
 "
 " Mappings {{{1
 let mapleader=","
