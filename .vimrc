@@ -55,14 +55,17 @@ else
     let g:rutaBusqueda = "/home/jorge"
 endif
 
-function! Test(patron, lugar)
-    echom g:rutaBusqueda
-    echom a:patron
-    lvimgrep "<q-args>"
+function! Test(patron)
+    "echom g:rutaBusqueda
+    "echom a:patron
+    "lvimgrep "<q-args>"
+    exec 'lvimgrep/'.a:patron.'/ '.g:rutaBusqueda.'/**/*.txt'
 endfun
 
-command! -nargs=+ Ngrep lvimgrep "<args>" expand(g:rutaBusqueda)
-command! -nargs=1 Ntest call Test("<args>", g:rutaBusqueda)
+"command! -nargs=+ Ngrep lvimgrep "<args>" .g:rutaBusqueda.'**/*.txt'
+command! -nargs=+ Njas exec 'lvimgrep /'."<args>"'/ '.g:rutaBusqueda.'/**/*.txt'
+command! -nargs=1 Ntest call Test("<args>")
+nnoremap <leader>n :Njas 
 
 " Options {{{1
 set pastetoggle=<F3>
@@ -108,6 +111,9 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+nnoremap <C-Up> :lprev<cr>
+nnoremap <C-Down> :lnext<cr>
 
 vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
 
