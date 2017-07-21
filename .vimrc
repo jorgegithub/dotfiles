@@ -63,9 +63,8 @@ function! Test(patron)
 endfun
 
 "command! -nargs=+ Ngrep lvimgrep "<args>" .g:rutaBusqueda.'**/*.txt'
-command! -nargs=+ Njas exec 'lvimgrep /'."<args>"'/ '.g:rutaBusqueda.'/**/*.txt'
+command! -nargs=1 Njas exec 'lvimgrep /'."<args>"'/ '.g:rutaBusqueda.'/**/*.txt'
 command! -nargs=1 Ntest call Test("<args>")
-nnoremap <leader>n :Njas 
 
 " Options {{{1
 set pastetoggle=<F3>
@@ -112,6 +111,7 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+nnoremap <leader>n :Ntest 
 nnoremap <C-Up> :lprev<cr>
 nnoremap <C-Down> :lnext<cr>
 
