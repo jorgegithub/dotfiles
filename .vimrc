@@ -55,6 +55,15 @@ else
     let g:rutaBusqueda = "/home/jorge"
 endif
 
+function! Test(patron, lugar)
+    echom g:rutaBusqueda
+    echom a:patron
+    lvimgrep "<q-args>"
+endfun
+
+command! -nargs=+ Ngrep lvimgrep "<args>" expand(g:rutaBusqueda)
+command! -nargs=1 Ntest call Test("<args>", g:rutaBusqueda)
+
 " Options {{{1
 set pastetoggle=<F3>
 set foldmethod=marker
