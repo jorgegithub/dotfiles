@@ -49,7 +49,7 @@ augroup END
 let g:maquina = system('hostname')
 if g:maquina =~ "mahi-mahi"
     let g:rutaBusqueda = "/home/jorge/documents/prb_es/g_conf/notas_reuniones"
-elseif g:maquina =~ "J's"
+elseif g:maquina =~ "Js"
     let g:rutaBusqueda = "/Users/jorge/Documents"
 else
     let g:rutaBusqueda = "/home/jorge"
