@@ -31,11 +31,6 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 "
 autocmd vimenter * NERDTree
-augroup testgroup
-    autocmd!
-    autocmd Filetype python set background=dark
-    autocmd Filetype python colorscheme pychimp
-augroup END
 
 "if has('gui_running')
     set background=dark
@@ -44,6 +39,12 @@ augroup END
 "else
 "    colorscheme zenburn
 "endif
+
+augroup testgroup
+    autocmd!
+    autocmd Filetype python set background=dark
+    autocmd Filetype python colorscheme pychimp
+augroup END
 
 " Personal options {{{1
 let g:maquina = system('hostname')
@@ -117,7 +118,7 @@ nnoremap <C-Down> :lnext<cr>
 
 vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
 
-inoremap <c-u> viwUea
+inoremap <c-u> <esc>viwUea
 
 iabbrev ññ -- <cr>Jorge del Arco<cr>jdelarco@gmail.com
 "
