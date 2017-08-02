@@ -91,6 +91,8 @@ set wildignore+=*.pdf,*.tgz,*.exe,*.xls,*.xlsx,*.doc,*.docx
 highlight TrailingSpaces ctermbg=red guibg=red
 match TrailingSpaces /[ \t]\+$/
 "
+" Cursor highlight (cursorline, cursorcolumn)
+set cul cuc
 " Mappings {{{1
 let mapleader=","
 " .vimrc {{{2
