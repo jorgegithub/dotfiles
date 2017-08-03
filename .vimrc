@@ -31,11 +31,6 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 "
 autocmd vimenter * NERDTree
-augroup testgroup
-    autocmd!
-    autocmd Filetype python set background=dark
-    autocmd Filetype python colorscheme pychimp
-augroup END
 
 "if has('gui_running')
     set background=dark
@@ -44,6 +39,12 @@ augroup END
 "else
 "    colorscheme zenburn
 "endif
+
+augroup testgroup
+    autocmd!
+    autocmd Filetype python set background=dark
+    autocmd Filetype python colorscheme pychimp
+augroup END
 
 " Personal options {{{1
 let g:maquina = system('hostname')
@@ -54,6 +55,17 @@ elseif g:maquina =~ "Js"
 else
     let g:rutaBusqueda = "/home/jorge"
 endif
+
+function! Test(patron)
+    "echom g:rutaBusqueda
+    "echom a:patron
+    "lvimgrep "<q-args>"
+    exec 'lvimgrep/'.a:patron.'/ '.g:rutaBusqueda.'/**/*.txt'
+endfun
+
+"command! -nargs=+ Ngrep lvimgrep "<args>" .g:rutaBusqueda.'**/*.txt'
+command! -nargs=1 Njas exec 'lvimgrep /'."<args>"'/ '.g:rutaBusqueda.'/**/*.txt'
+command! -nargs=1 Ntest call Test("<args>")
 
 " Options {{{1
 set pastetoggle=<F3>
@@ -79,6 +91,8 @@ set wildignore+=*.pdf,*.tgz,*.exe,*.xls,*.xlsx,*.doc,*.docx
 highlight TrailingSpaces ctermbg=red guibg=red
 match TrailingSpaces /[ \t]\+$/
 "
+" Cursor highlight (cursorline, cursorcolumn)
+set cul cuc
 " Mappings {{{1
 let mapleader=","
 " .vimrc {{{2
@@ -100,9 +114,13 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+nnoremap <leader>n :Ntest 
+nnoremap <C-Up> :lprev<cr>
+nnoremap <C-Down> :lnext<cr>
+
 vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
 
-inoremap <c-u> viwUea
+inoremap <c-u> <esc>viwUea
 
 iabbrev ññ -- <cr>Jorge del Arco<cr>jdelarco@gmail.com
 "
