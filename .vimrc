@@ -138,5 +138,9 @@ iabbrev ññ -- <cr>Jorge del Arco<cr>jdelarco@gmail.com
 "
 "YCM TAB to Enter because of snippets plugins incompatibility
 let g:ycm_key_list_select_completion = ['<Enter>', '<Down>']
+<<<<<<< HEAD
 "}}}
 "}}}
+=======
+
+>>>>>>> 5c7ad349397a7ecf78c4868a16275428bb905a27
