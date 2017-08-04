@@ -5,8 +5,8 @@ filetype off
 " " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-"}}}
-" Plugins {{{2
+
+" Plugins {{{1
 Plugin 'mileszs/ack.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
@@ -29,8 +29,9 @@ Plugin 'altercation/vim-colors-solarized'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-"}}}
-autocmd vimenter * NERDTree
+
+" autocommands and colorscheme {{{1
+" autocmd vimenter * NERDTree
 
 "if has('gui_running')
     set background=dark
@@ -39,12 +40,6 @@ autocmd vimenter * NERDTree
 "else
 "    colorscheme zenburn
 "endif
-
-augroup testgroup
-    autocmd!
-    autocmd Filetype python set background=dark
-    autocmd Filetype python colorscheme pychimp
-augroup END
 
 " Personal options {{{1
 let g:maquina = system('hostname')
@@ -56,11 +51,18 @@ else
     let g:rutaBusqueda = "/home/jorge"
 endif
 
-augroup filetypes " {{{2
+augroup testgroup "{{{2
+    autocmd!
+    autocmd Filetype python set background=dark
+    autocmd Filetype python colorscheme pychimp
+augroup END
+
+augroup filetypes "{{{2
     au!
     au BufNewFile,BufRead *.txt setl ft=markdown
-augroup END "}}}
-"
+augroup END
+
+" lvimgrep {{{2
 function! Test(patron)
     "echom g:rutaBusqueda
     "echom a:patron
@@ -95,11 +97,11 @@ set wildignore+=*.pdf,*.tgz,*.exe,*.xls,*.xlsx,*.doc,*.docx
 " Highlight
 highlight TrailingSpaces ctermbg=red guibg=red
 match TrailingSpaces /[ \t]\+$/
-"
+
 " Cursor highlight (cursorline, cursorcolumn)
 set cul cuc
 "}}}
-"" Mappings {{{1
+" Mappings {{{1
 let mapleader=","
 " .vimrc {{{2
 " Open .vimrc
@@ -138,9 +140,3 @@ iabbrev ññ -- <cr>Jorge del Arco<cr>jdelarco@gmail.com
 "
 "YCM TAB to Enter because of snippets plugins incompatibility
 let g:ycm_key_list_select_completion = ['<Enter>', '<Down>']
-<<<<<<< HEAD
-"}}}
-"}}}
-=======
-
->>>>>>> 5c7ad349397a7ecf78c4868a16275428bb905a27
