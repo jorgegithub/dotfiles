@@ -1,3 +1,4 @@
+" vim: foldmethod=marker
 " Setup {{{1
 set nocompatible
 filetype off
@@ -12,7 +13,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-airline/vim-airline'
-Plugin 'plasticboy/vim-markdown'
+"Plugin 'plasticboy/vim-markdown'
 Plugin 'Valloric/YouCompleteMe'
 
 " Plugins for snippets
@@ -51,15 +52,17 @@ else
     let g:rutaBusqueda = "/home/jorge"
 endif
 
+augroup filetypes "{{{2
+    au!
+    au BufNewFile,BufRead *.txt setl ft=markdown
+augroup END
+
 augroup testgroup "{{{2
     autocmd!
     autocmd Filetype python set background=dark
     autocmd Filetype python colorscheme pychimp
-augroup END
-
-augroup filetypes "{{{2
-    au!
-    au BufNewFile,BufRead *.txt setl ft=markdown
+    autocmd Filetype markdown setl foldmethod=expr
+    autocmd Filetype markdown setl foldexpr=JASMarkdownFolds()
 augroup END
 
 " lvimgrep {{{2
@@ -76,7 +79,7 @@ command! -nargs=1 Ntest call Test("<args>")
 "}}}
 " Options {{{1
 set pastetoggle=<F3>
-set foldmethod=marker
+"set foldmethod=marker
 set ignorecase
 set incsearch
 set laststatus=2
