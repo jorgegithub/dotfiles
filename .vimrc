@@ -44,7 +44,7 @@ filetype plugin indent on    " required
 
 " Personal options {{{1
 let g:maquina = system('hostname')
-if g:maquina =~ "mahi-mahi"
+if g:maquina =~ "neapolitan"
     let g:rutaBusqueda = "/home/jorge/documents/ccc"
 elseif g:maquina =~ "Js"
     let g:rutaBusqueda = "/Users/jorge/Documents"
@@ -127,7 +127,7 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " search in files and navitaging through results
-nnoremap <leader>n :Ntest 
+nnoremap <leader>n :Ntest
 nnoremap <Up> :lprev<cr>
 nnoremap <Down> :lnext<cr>
 
