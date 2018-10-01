@@ -45,7 +45,7 @@ filetype plugin indent on    " required
 " Personal options {{{1
 let g:maquina = system('hostname')
 if g:maquina =~ "neapolitan"
-    let g:rutaBusqueda = "/home/jorge/documents/ccc"
+    let g:rutaBusqueda = "/home/jorge/documents"
 elseif g:maquina =~ "Js"
     let g:rutaBusqueda = "/Users/jorge/Documents"
 else
