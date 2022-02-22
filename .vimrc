@@ -46,6 +46,8 @@ filetype plugin indent on    " required
 let g:maquina = system('hostname')
 if g:maquina =~ "neapolitan"
     let g:rutaBusqueda = "/home/jorge/documents"
+elseif g:maquina =~ "minor"
+    let g:rutaBusqueda = "/home/jorge"
 elseif g:maquina =~ "Js"
     let g:rutaBusqueda = "/Users/jorge/Documents"
 else
