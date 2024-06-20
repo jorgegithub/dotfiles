@@ -1,7 +1,7 @@
 ```mermaid
 graph TD;
-    A-->B;
-    A-->C;
+    A-->vc-manager;
+    A-->pepe-manager;
     A-->F;
     B-->D;
     C-->D;
